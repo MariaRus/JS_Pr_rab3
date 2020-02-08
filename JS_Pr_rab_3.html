@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+function f() {
+    var x = prompt('Введите координату X для точки:','');
+    var y = prompt('Введите координату Y для точки:','');
+    if(x == 0 || y == 0)
+        alert((x == 0 && y == 0) ? 'Ошибка ввода! Точка не может совпадать с началом отсчёта 0(0,0)' : 'Точка принадлежит оси ' + ((x == 0 ? 'Y' : 'X')));
+    else{
+        var horizontal = (x > 0 ? [1,2] : [3,4]);
+        var vertical = (y > 0 ? [1,4] : [2,3]);
+        horizontal.forEach(element => {if(vertical.includes(element)) alert('Точка принадлежит ' + element + ' четверти')});
+    }
+}
+f();
+ </script>
+ </body>
+</html>
